@@ -1,3 +1,4 @@
 matplotlib
 seaborn
 altair
+altair_catplot
