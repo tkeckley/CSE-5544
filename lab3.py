@@ -8,7 +8,7 @@ import altair_catplot as altcat
 
 ########## Setup ##########
 st.title("Lab 3 - Ethics in Data Visualization")
-# st.markdown("##### By: Taylor Keckley")
+st.markdown("##### By: Taylor Keckley")
 
 df = pd.read_csv("https://raw.githubusercontent.com/CSE5544/data/main/ClimateData.csv")
 
