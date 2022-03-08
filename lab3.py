@@ -133,7 +133,7 @@ chart = alt.Chart(data, title="Tons of CO\u2082 Emissions by Country and Year").
 chart
 
 '''I would put this heatmap in the middle of the ones shows. The interactivity and the multiselect list help make the chart easier to understand.
-However, I personally don't like the inferno color palette because the black is so dark.'''
+However, I personally don't like the inferno color palette and prefer the default blue and green color palette.'''
 
 
 "**Altair Boxplot**"
