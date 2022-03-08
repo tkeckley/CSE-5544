@@ -56,7 +56,7 @@ so you can hover over an area to see the specific amount of CO\u2082 emissions p
 during a specific year. '''
 
 st.markdown("**Commentary:**")
-'''I would say this plot is the better of the two presented.
+'''I would say this plot is the best of the all the heatmaps presented.
 - Pros
     - It is not too difficult to tell relative differences in emissions between countries (lighter color = lower emissions, darker color=higher emissions).
     - The sorting of the y-axis is helpful when the data has outliers that make many countries look the same.
@@ -95,7 +95,7 @@ st.markdown("**Chart Caption:**")
 "\*Blank\*"
 
 st.markdown("**Commentary:**")
-'''This chart is by far the worse of the two options, and can be very misleading.
+'''This chart is by far the worst of the options shown, and can be very misleading.
 - Potentially Misleading Factors:
     - No caption describing chart in any way.
     - Missing values are colored in but not mentioend in the caption or legend. 
@@ -120,7 +120,7 @@ data = df2.loc[df2['Country'].isin(options)]
 chart = alt.Chart(data, title="Tons of CO\u2082 Emissions by Country and Year").mark_rect(stroke="white").encode(
     alt.X('Year:N'),
     alt.Y('Country:N', sort=alt.EncodingSortField(field='Emissions', order='descending')),
-    alt.Color('Emissions:Q', title="Emissions (tons of CO2)", scale=alt.Scale(scheme='inferno')),
+    alt.Color('Emissions:Q', title="Emissions (tons of CO2)", scale=alt.Scale(scheme='inferno', reverse=True)),
     tooltip=[
         alt.Tooltip('Country:N', title='Country'),
         alt.Tooltip('Year:N', title='Year'),
@@ -131,6 +131,9 @@ chart = alt.Chart(data, title="Tons of CO\u2082 Emissions by Country and Year").
     height=700
 )
 chart
+
+'''I would put this heatmap in the middle of the ones shows. The interactivity and the multiselect list help make the chart easier to understand.
+However, I personally don't like the inferno color palette because the black is so dark.'''
 
 
 "**Altair Boxplot**"
