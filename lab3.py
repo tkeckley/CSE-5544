@@ -113,7 +113,7 @@ Overall it is hard to see most trends and relative differences in the data becau
 st.markdown("## Extra") 
 
 # Add a multiselect list for countries
-options = st.multiselect("Select/Deselect Countries", countries, countries, key="heatmapHonest")
+options = st.multiselect("Select/Deselect Countries", countries, countries, key="heatmapInferno")
 data = df2.loc[df2['Country'].isin(options)]
 
 # Plot interactive heatmap of data
