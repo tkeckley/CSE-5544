@@ -112,6 +112,27 @@ Overall it is hard to see most trends and relative differences in the data becau
 ########## Extra ##########
 st.markdown("## Extra") 
 
+# Add a multiselect list for countries
+options = st.multiselect("Select/Deselect Countries", countries, countries, key="heatmapHonest")
+data = df2.loc[df2['Country'].isin(options)]
+
+# Plot interactive heatmap of data
+chart = alt.Chart(data, title="Tons of CO\u2082 Emissions by Country and Year").mark_rect(stroke="white").encode(
+    alt.X('Year:N'),
+    alt.Y('Country:N', sort=alt.EncodingSortField(field='Emissions', order='descending')),
+    alt.Color('Emissions:Q', title="Emissions (tons of CO2)", scheme='inferno'),
+    tooltip=[
+        alt.Tooltip('Country:N', title='Country'),
+        alt.Tooltip('Year:N', title='Year'),
+        alt.Tooltip("Emissions:Q", title='Emissions (tons of CO2)', format=",")
+    ]
+).properties(
+    width=1000,
+    height=700
+)
+chart
+
+
 "**Altair Boxplot**"
 with st.echo():
     options = st.multiselect("Select/Deselect Countries", countries, ('OECD - Total', 'OECD America', 'OECD - Europe', 'European Union (28 countries)'), key="catplot")
