@@ -120,7 +120,7 @@ data = df2.loc[df2['Country'].isin(options)]
 chart = alt.Chart(data, title="Tons of CO\u2082 Emissions by Country and Year").mark_rect(stroke="white").encode(
     alt.X('Year:N'),
     alt.Y('Country:N', sort=alt.EncodingSortField(field='Emissions', order='descending')),
-    alt.Color('Emissions:Q', title="Emissions (tons of CO2)", scheme='inferno'),
+    alt.Color('Emissions:Q', title="Emissions (tons of CO2)", scale=alt.Scale(scheme='inferno')),
     tooltip=[
         alt.Tooltip('Country:N', title='Country'),
         alt.Tooltip('Year:N', title='Year'),
